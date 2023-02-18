@@ -141,18 +141,17 @@ transition: slide-left
 # Flux架構的資料流是單向的
 Flux架構中，使用者在View的操作無法直接改變狀態，而必須以Action的方式回到架構中跑流程去改變狀態。
 
+```html {1|2|3|all}
 Data in a Flux application flows in a single direction: 
 The views may cause a new action to be propagated through the system in response to user interactions. 
-> 「特別注意的是它的方向性，它一定是單向的。也就是說 View 不能直接改變狀態，一定要透過 Dispatcher」
+「特別注意的是它的方向性，它一定是單向的。也就是說 View 不能直接改變狀態，一定要透過 Dispatcher」
+```
 
 <img src='https://facebook.github.io/flux/img/overview/flux-simple-f8-diagram-with-client-action-1300w.png'>
 
 <br>
-<br>
 
-
-
-Read more about [Flux: In-Depth Overview](https://facebook.github.io/flux/docs/in-depth-overview.html#content), [更改狀態的基礎 Action & Reducer](https://fullstackladder.dev/blog/2022/08/03/ngrx-04-action-reducer/)
+> 參考資料：[Flux: In-Depth Overview](https://facebook.github.io/flux/docs/in-depth-overview.html#content), [更改狀態的基礎 Action & Reducer](https://fullstackladder.dev/blog/2022/08/03/ngrx-04-action-reducer/)
 
 ---
 transition: slide-left
@@ -200,7 +199,7 @@ transition: slide-left
 <br>
 <br>
 
-Read more about [@ngrx/store](https://ngrx.io/guide/store)
+>參考資料：[@ngrx/store](https://ngrx.io/guide/store)
 
 
 <style>
@@ -235,7 +234,7 @@ A good guideline that might help answer the question, "Do I need NgRx Store?" is
 
 <br>
 
-參考資料： [Ngrx Store - An Architecture Guide](https://blog.angular-university.io/angular-ngrx-store-and-effects-crash-course/)
+> 參考資料：[Ngrx Store - An Architecture Guide](https://blog.angular-university.io/angular-ngrx-store-and-effects-crash-course/)
 
 
 ---
@@ -244,7 +243,7 @@ transition: slide-left
 
 # 使用Flux架構的狀態管理有什麼好處？
 
-```html {1|4|all}
+```html {1|2,3|4|5,6|all}
 - 在撰寫程式的過程，就會開始把所有狀態、行為和邏輯拆到這些角色中，之後在 Component 內就會變得很單純
   - 讀取狀態：從 Selector 拿資料就好
   - 改變狀態：分配 Action 就好
@@ -260,14 +259,14 @@ transition: slide-left
 ```
 <br>
 
-參考資料： [ngrx/store 完成篇](https://ithelp.ithome.com.tw/articles/10197238), [簡介 NgRx](https://fullstackladder.dev/blog/2022/04/17/ngrx-01-introduce/)
+> 參考資料：[ngrx/store 完成篇](https://ithelp.ithome.com.tw/articles/10197238), [簡介 NgRx](https://fullstackladder.dev/blog/2022/04/17/ngrx-01-introduce/)
 
 
 ---
 transition: slide-left
 ---
 # 如何實作？
-先休息一下，下次再分享
+先休息一下，晚點再分享
 
 
 ---
@@ -285,7 +284,7 @@ Redux offers a tradeoff. It asks you to:
 <br>
 <br>
 
-Read more about [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+> Read more about [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 
 
 ---
@@ -302,7 +301,7 @@ transition: slide-left
 - 「函數對於同樣的參數，永遠產生同樣的結果，也就是這個函數不能根據一些隱藏資訊（例如函數內使用全域變數，亂數...）或者目前的狀態在程式執行時（例如目前時間,目前頁面...），程式與程式之間 (在不同的函數呼叫此函數時），或者使用者輸出入介面(I/O)的值（例如 event listener對於 input, mouseMove, 跟後端伺服器做 request...)。」
 - 「函數產生的結果，不能帶來副作用(side effect)或者輸出,也就是不能對可變動的物件(mutable object)做更動，或者使用者輸出介面做輸出。」
 
-[^1](https://en.wikipedia.org/wiki/Pure_function)
+> [^1 Pure function](https://en.wikipedia.org/wiki/Pure_function)
 
 ---
 transition: slide-left
@@ -367,3 +366,4 @@ transition: slide-left
 - [Redux Application Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 - [@ngrx/store](https://ngrx.io/guide/store)
 - [ngrx/store 完成篇](https://ithelp.ithome.com.tw/articles/10197238)
+- [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
