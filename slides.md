@@ -27,7 +27,7 @@ css: unocss
 
 # 淺談前端狀態管理
 
-使用者權限控管
+以Flux架構的狀態管理為主
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -294,10 +294,11 @@ transition: slide-left
 
 
 ---
+layout: center
 transition: slide-left
 ---
-# Flux架構的實作：以使用者權限控管為例
-接下來將會介紹Flux架構的實作
+# Flux架構的實作
+以Redux使用者權限控管為例
 
 
 ---
@@ -343,7 +344,6 @@ transition: slide-left
 
 # 純函數與不純函數
 純函數與不純函數
-純函數的例子
 ```js {all|1,2,3|4,5|all}
 function sum(a, b) {
   return a + b;
@@ -352,8 +352,7 @@ sum(2,5);
 // will always return 7
 ```
 
-不純函數的例子
-```js {all|1|2,3,4|5,6|9|10,11|all}
+```js {all|1,2,3,4,5,6|7,8,9,10,11|1,5,6,8,9,10|all}
 var discount = 0.8;
 function calcPrice(price) {
   return price * discount;
