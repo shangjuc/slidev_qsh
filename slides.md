@@ -127,11 +127,10 @@ Flux是一種狀態管理架構，它大致可以分成四個部分。
 - Store: 儲存Reducers。Reducer是「在某組相對應的State及Action下要回呼的函式」，其會將Action與舊State化約為新State。
 - View: 使用者看到的內容，其會隨著狀態改變。
 ```
-
-<arrow v-click="1" x1="200" y1="450" x2="200" y2="400" color="#564" width="3" arrowSize="1" />
+<!-- <arrow v-click="1" x1="200" y1="450" x2="200" y2="400" color="#564" width="3" arrowSize="1" />
 <arrow v-click="2" x1="400" y1="450" x2="400" y2="400" color="#564" width="3" arrowSize="1" />
 <arrow v-click="3" x1="600" y1="450" x2="600" y2="400" color="#564" width="3" arrowSize="1" />
-<arrow v-click="4" x1="800" y1="450" x2="800" y2="400" color="#564" width="3" arrowSize="1" />
+<arrow v-click="4" x1="800" y1="450" x2="800" y2="400" color="#564" width="3" arrowSize="1" /> -->
 <br>
 <img src='https://facebook.github.io/flux/img/overview/flux-simple-f8-diagram-1300w.png'>
 
