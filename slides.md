@@ -296,8 +296,8 @@ transition: slide-left
 ---
 transition: slide-left
 ---
-# 中場休息時間
-接下來將會進行Flux架構的實作
+# Flux架構的實作：以使用者權限控管為例
+接下來將會介紹Flux架構的實作
 
 
 ---
