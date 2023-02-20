@@ -166,36 +166,32 @@ transition: slide-up
 
 # 情境分析介面能怎麼發展?
 
-```md{0|1|2|3|0}
-- 結合風向分析功能
+
+1. 結合風向分析功能
     - 目前Trend只有FB單一渠道風向分析功能，我們可以直接把跨渠道風向分析模組結合情境分析介面的文章列表，讓使用者在同一介面上直接tag文章
     - 搭配更好看的圖表，讓風向分析功能更有升級感
-```
-```md{0|1|2|3|0}
-- 結合熱門關鍵字功能
+
+2. 結合熱門關鍵字功能
     - 目前Trend有熱門關鍵字介面，我們可以用權限控制來分享這類頁面，以接觸更多潛在客戶
     - 權限控制也能套用在快訊通知頁面的分享上，讓客戶服務其客戶時，更能彰顯其專業
-```
-```md{0|1|all}
-- Trend輕量化開發構想: https://docs.google.com/presentation/d/1Ih8_hqtwlK-lL63PlVVce0BtpSfiPAzEzBoXziwiEd0/
-    - [主題斷詞視覺化圖](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E9%98%B2&panels=ZCP&days=15&channels=FB) 
-    - [社群影響力趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=LC&days=30&channels=FB)
-    - [貼文互動情緒趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=BC&days=30&channels=FB)
-    - [熱門文章列表](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E8%BB%8DPTT%7C%E5%9C%8B%E8%BB%8D&panels=HP&days=2&channels=FORUM&ptt_filter=Gossiping,HatePolitics,Military)  
-```
+
+3. 結合[Trend輕量化開發構想](https://docs.google.com/presentation/d/1Ih8_hqtwlK-lL63PlVVce0BtpSfiPAzEzBoXziwiEd0/):
+    - 青年日報專案：[主題斷詞視覺化圖](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E9%98%B2&panels=ZCP&days=15&channels=FB) 
+    - 高雄市議會專案：[社群影響力趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=LC&days=30&channels=FB)、[貼文互動情緒趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=BC&days=30&channels=FB)、[熱門文章列表](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E8%BB%8DPTT%7C%E5%9C%8B%E8%BB%8D&panels=HP&days=2&channels=FORUM&ptt_filter=Gossiping,HatePolitics,Military)  
+
 
 
 ---
 
-# 對產品及自身的期許
-身為前端開發者對產品發展的想法，也是對自己的期許：
+# 結語：對產品及自身的期許
+身為前端開發者，以下是對產品的一些期待，也是對自己的期許：
 - 在看得見的地方：
   - 提供更好、更穩定的操作介面
   - 提供更佳的使用者體驗
-- 在看不見的地方
+- 在看不見的地方：
   - 提升產品的技術等級，讓後續的開發能更快反應市場需求
   - 提升產品的可維護性，讓團隊能夠更有效地維運
-- 不斷嘗試新技術，以提供更有趣、更實用的功能給客戶
+- 透過不斷嘗試新技術，提供更有趣、更實用的功能給客戶
   - 串接ChatGPT: 以AI輔助客戶建立搜尋語法
   - 串接SlideV: 生成MD文件以自動產製簡報
   - ...
