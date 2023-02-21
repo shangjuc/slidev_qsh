@@ -46,7 +46,7 @@ css: unocss
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+我們將回顧過去3年多來，Trend的發展
 -->
 
 ---
@@ -73,6 +73,9 @@ transition: slide-up
  - 用selenium撰寫自動化測試
  - 用Express建立本機端後端程式以提供API進行測試
 ```
+<!--
+Trend從單一渠道逐步升級為跨渠道功能，有看得見的部分，也有看不見的部分
+-->
 
 
 
@@ -96,7 +99,7 @@ transition: slide-up
 
 跨渠道Trend前端介面已經進入穩定維運階段，AngularJS框架也於2022年1月正式停止提供支援，我認為是時候將Trend介面以新框架重構，並且提供更好的使用者體驗。
 
-因此，在這段期間，我進行了以下工作：
+因此，在這段期間，我進行了以下研究：
 
 ```md{0|1,2|4,5|7,8,9}
 - 與業務一同拜訪客戶，進行使用者經驗研究：
@@ -109,6 +112,20 @@ transition: slide-up
   - https://github.com/shangjuc/trend_lite_react
   - https://github.com/shangjuc/trend_lite_angular
 ```
+<!--
+跨渠道Trend前端介面已經進入穩定維運階段，AngularJS框架也於2022年1月正式停止提供支援，我認為是時候將Trend介面以新框架重構，並且提供更好的使用者體驗。因此，在這段期間，我進行了以下研究：
+- 與業務一同拜訪客戶，進行使用者經驗研究：
+  https://docs.google.com/presentation/d/156vwyWaG4dvVLgXXxwT7HN7TPsaX9PKl0QRgWasWL74/
+
+- 研究框架之間的優缺點並做成報告「Trend前端框架轉移評估」
+  https://docs.google.com/presentation/d/179sbMunPrvqgbFgyP27BRtf2AzsHfSsIESoRYHgGqEU/
+
+- 實際測試既有產品套件與框架(React, Angular)之間的相容性:
+  - https://github.com/shangjuc/trend_lite_react
+  - https://github.com/shangjuc/trend_lite_angular
+
+-->
+
 
 ---
 
@@ -117,7 +134,7 @@ transition: slide-up
 
 主力產品的升級必定是要經過慎密計畫，除了前述UX研究、框架測試，更重要的是建立團隊開發的流程。
 
-因此我進行了以下工作：
+我以BAM開發經驗作為Trend框架升級的前置作業，並完成以下工作：
 
 ```md {0|1|3,4|6,7|9}
  - 參與制定需求規格書，與後端討論並制定API串接格式
@@ -175,9 +192,35 @@ transition: slide-up
     - 目前Trend有熱門關鍵字介面，我們可以用權限控制來分享這類頁面，以接觸更多潛在客戶
     - 權限控制也能套用在快訊通知頁面的分享上，讓客戶服務其客戶時，更能彰顯其專業
 
-3. 結合[Trend輕量化開發構想](https://docs.google.com/presentation/d/1Ih8_hqtwlK-lL63PlVVce0BtpSfiPAzEzBoXziwiEd0/):
-    - 青年日報專案：[主題斷詞視覺化圖](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E9%98%B2&panels=ZCP&days=15&channels=FB) 
-    - 高雄市議會專案：[社群影響力趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=LC&days=30&channels=FB)、[貼文互動情緒趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=BC&days=30&channels=FB)、[熱門文章列表](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E8%BB%8DPTT%7C%E5%9C%8B%E8%BB%8D&panels=HP&days=2&channels=FORUM&ptt_filter=Gossiping,HatePolitics,Military)  
+
+---
+
+
+# 如何加速Trend框架升級?
+Trend框架升級勢必要投入大量的開發能量，但是我們仍然可以將功能一步一步轉移到新框架上，我想提出的是[Trend輕量化開發構想](https://docs.google.com/presentation/d/1Ih8_hqtwlK-lL63PlVVce0BtpSfiPAzEzBoXziwiEd0/):
+
+  - 青年日報專案：[主題斷詞視覺化圖](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E9%98%B2&panels=ZCP&days=15&channels=FB)
+
+<div class="flex h-60% w-full">
+  <iframe class="w-50% mr-1" src="https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E9%98%B2&panels=ZCP&days=3&channels=FB"></iframe>
+  <img class="w-50% h-auto" src="/zcp.png" >
+</div>
+
+
+---
+
+# 如何加速Trend框架升級?
+[Trend輕量化開發構想](https://docs.google.com/presentation/d/1Ih8_hqtwlK-lL63PlVVce0BtpSfiPAzEzBoXziwiEd0/):
+
+  - 高雄市議會專案：[社群影響力趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=LC&days=30&channels=FB)、[貼文互動情緒趨勢圖](https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=BC&days=30&channels=FB)、[熱門文章列表](https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E8%BB%8DPTT%7C%E5%9C%8B%E8%BB%8D&panels=HP&days=2&channels=FORUM&ptt_filter=Gossiping,HatePolitics,Military)  
+
+<div class="flex h-70%">
+  <iframe class="mr-1" src="https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=LC&days=30&channels=FB"></iframe>
+  <iframe class="mr-1" src="https://analytics.qsearch.cc/trend_lite#!?q=Vtuber&panels=BC&days=30&channels=FB"></iframe>
+  <iframe class="mr-1" src="https://analytics.qsearch.cc/trend_lite#!?q=%E5%9C%8B%E8%BB%8DPTT%7C%E5%9C%8B%E8%BB%8D&panels=HP&days=2&channels=FORUM&ptt_filter=Gossiping,HatePolitics,Military"></iframe>
+</div>
+
+
 
 
 
