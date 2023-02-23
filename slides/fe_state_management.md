@@ -291,7 +291,7 @@ transition: slide-left
 
 # 純函數與不純函數
 純函數與不純函數
-```js {all|1,2,3|4,5|all}
+```js {0|1,2,3|4,5|all}
 function sum(a, b) {
   return a + b;
 }
@@ -299,7 +299,7 @@ sum(2,5);
 // will always return 7
 ```
 
-```js {all|1,2,3,4,5,6|7,8,9,10,11|1,5,6,8,9,10|all}
+```js {0|1,2,3,4,5,6|7,8,9,10,11|1,5,6,8,9,10|all}
 var discount = 0.8;
 function calcPrice(price) {
   return price * discount;
@@ -327,6 +327,33 @@ console.log(calcPrice(100));
 </style>
 
 
+---
+
+
+# Reducer作為純函數的好處
+由於Store裡的Reducer必須是純函數，因此易於進行單元測試：
+<div class="img-container">
+  <img src='https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif'>
+</div>
+
+
+<br>
+<br>
+
+> 參考資料：[Redux Application Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+
+
+<style>
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  height: 75%;
+}
+img {
+  height: 100%;
+}
+</style>
 
 
 
@@ -334,17 +361,17 @@ console.log(calcPrice(100));
 transition: slide-left
 ---
 
-# 使用Flux架構式的狀態管理有什麼好處？
+# 總結：Flux架構的狀態管理的優點
 Flux架構在Redux, NgRx分別有些差異，但總結來說，它們有以下優點：
-- 方便使用外部儲存：
-  - Persist state to a LocalStorage
-  - Pre-fill state on the server
-- 易於追縱狀態在「何時」被「何者」「如何」改變：
-  - Flux架構會將「使用者的動作Action與當下的狀態State的組合」序列化，單向資料流讓錯誤易於重現。
-  - 瀏覽器有相應的擴充功能Redux DevTool可以協助追縱狀態流程。
-- 易於測試：
+- 單向資料流易於追縱狀態在「何時」被「何者」「如何」改變：
+  - Flux架構會將「使用者的動作Action與當下的狀態State的組合」序列化，單向資料流讓錯誤易於重現
+  - 瀏覽器有相應的擴充功能Redux DevTool可以協助追縱狀態流程
+- 純函數Reducer易於測試：
   - 由於Store裡的Reducer必須是純函數，因此易於進行單元測試
   - Test-driven development
+- 將狀態統一管理，易於使用外部儲存：
+  - Persist state to a LocalStorage
+  - Pre-fill state on the server
 
 <!-- 
 ```html {1|2|3|4|5|6|7|8|0}
