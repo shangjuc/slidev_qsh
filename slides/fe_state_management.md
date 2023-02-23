@@ -118,11 +118,11 @@ FB訊息已讀/未讀顯示錯誤的bug:
 transition: slide-left
 ---
 
-# Flux架構的主要概念
+# Flux架構概觀
 Flux是一種狀態管理架構，它大致可以分成四個部分。
 
 ```html {0|1|2|3|4|all}
-- Action: 對應於使用者的操作所定義的動作。
+- Action: application 傳遞資料到 store 的資訊payload。
 - Dispatcher: 接受Actions的單一窗口，在每個applicatoin中，Dispatcher 只會有一個。
 - Store: 儲存Reducers。Reducer是「在某組相對應的State及Action下要回呼的函式」，其會將Action與舊State化約為新State。
 - View: 使用者看到的內容，其會隨著狀態改變。
@@ -142,7 +142,7 @@ Flux是一種狀態管理架構，它大致可以分成四個部分。
 transition: slide-left
 ---
 
-# Flux架構的資料流是單向的
+# Flux架構的核心概念：單向資料流
 Flux架構中，使用者在View的操作無法直接改變狀態，而必須以Action的方式回到架構中跑流程去改變狀態。
 
 ```html {1|2|3|all}
@@ -247,18 +247,23 @@ img {
 transition: slide-left
 ---
 
-# Redux狀態管理的實作準則
+# Redux狀態管理的實作原則
+以下分別節錄不同作者所寫的Redux實作原則：
 
-Redux offers a tradeoff. It asks you to:
+1. Redux offers a tradeoff. It asks you to:
+   - Describe application state as **plain objects and arrays**.
+   - Describe changes in the system as **plain objects**.
+   - Describe the logic for handling changes as **pure functions**.
 
-- Describe application state as **plain objects and arrays**.
-- Describe changes in the system as **plain objects**.
-- Describe the logic for handling changes as **pure functions**.
+2. Redux 可以用三個基本的原則來描述：
+   - 唯一真相來源:你整個應用程式的 state，被儲存在一個樹狀物件放在唯一的 store 裡面。
+   - State 是唯讀的:改變 state 的唯一的方式是發出一個 action，也就是一個描述發生什麼事的物件。
+   - 變更被寫成 pure function: 要指定 state tree 如何藉由 action 來轉變，你必須撰寫 pure reducer。
 
 <br>
 <br>
 
-> Read more about [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+> 參考： [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367), [三大原則](https://chentsulin.github.io/redux/docs/introduction/ThreePrinciples.html)
 
 
 ---
