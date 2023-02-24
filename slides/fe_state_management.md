@@ -91,9 +91,9 @@ transition: slide-left
 ---
 
 # 因應複雜狀態管理而生的Flux架構
-「Flux 並不是一個 Library，它是一種應用程式的架構 (application architecture)，就像常看到的 MVC (Model View Controller) 一樣是一種架構」
 
-FB訊息已讀/未讀顯示錯誤的bug:
+Flux架構主要是因應FaceBook訊息已讀/未讀顯示錯誤的bug而生。
+
 <img src="https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/facebook-bug.png"/>
 
 > The problem was that the unread messages counter was systematically displaying incorrect results: users would see for example one unread message, then they would click on the counter and all the messages had already been read.
@@ -119,7 +119,7 @@ transition: slide-left
 ---
 
 # Flux架構概觀
-Flux是一種狀態管理架構，它大致可以分成四個部分。
+Flux是一種狀態管理架構。「Flux 並不是一個 Library，它是一種應用程式的架構 (application architecture)，就像常看到的 MVC (Model View Controller) 一樣是一種架構」。
 
 ```html {0|1|2|3|4|all}
 - Action: application 傳遞資料到 store 的資訊payload。
@@ -132,6 +132,7 @@ Flux是一種狀態管理架構，它大致可以分成四個部分。
 <arrow v-click="3" x1="600" y1="450" x2="600" y2="400" color="#564" width="3" arrowSize="1" />
 <arrow v-click="4" x1="800" y1="450" x2="800" y2="400" color="#564" width="3" arrowSize="1" /> -->
 <br>
+
 <img src='https://facebook.github.io/flux/img/overview/flux-simple-f8-diagram-1300w.png'>
 
 <br>
@@ -142,7 +143,7 @@ Flux是一種狀態管理架構，它大致可以分成四個部分。
 transition: slide-left
 ---
 
-# Flux架構的核心概念：單向資料流
+# Flux架構的特點：單向資料流
 Flux架構中，使用者在View的操作無法直接改變狀態，而必須以Action的方式回到架構中跑流程去改變狀態。
 
 ```html {1|2|3|all}
@@ -250,15 +251,19 @@ transition: slide-left
 # Redux狀態管理的實作原則
 以下分別節錄不同作者所寫的Redux實作原則：
 
-1. Redux offers a tradeoff. It asks you to:
-   - Describe application state as **plain objects and arrays**.
-   - Describe changes in the system as **plain objects**.
-   - Describe the logic for handling changes as **pure functions**.
+```md
+Redux offers a tradeoff. It asks you to:
+  - Describe application state as **plain objects and arrays**.
+  - Describe changes in the system as **plain objects**.
+  - Describe the logic for handling changes as **pure functions**.
+```
 
-2. Redux 可以用三個基本的原則來描述：
-   - 唯一真相來源:你整個應用程式的 state，被儲存在一個樹狀物件放在唯一的 store 裡面。
-   - State 是唯讀的:改變 state 的唯一的方式是發出一個 action，也就是一個描述發生什麼事的物件。
-   - 變更被寫成 pure function: 要指定 state tree 如何藉由 action 來轉變，你必須撰寫 pure reducer。
+```md
+Redux 可以用三個基本的原則來描述：
+  - 唯一真相來源:你整個應用程式的 state，被儲存在一個樹狀物件放在唯一的 store 裡面。
+  - State 是唯讀的:改變 state 的唯一的方式是發出一個 action，也就是一個描述發生什麼事的物件。
+  - 變更被寫成 pure function: 要指定 state tree 如何藉由 action 來轉變，你必須撰寫 pure reducer。
+```
 
 <br>
 <br>
@@ -272,17 +277,20 @@ transition: slide-left
 
 
 # Redux 要求 Reducer必須為純函數
-在Redux裡，要求使用純函數處理狀態的變化。以下為純函數的定義[^1]，其必須符合兩個條件：
+在Redux裡，要求使用純函數處理狀態的變化。
 
-> - The function return values are identical for identical arguments (no variation with local static variables, non-local variables, mutable reference arguments or input streams)
-> - The function has no side effects (no mutation of local static variables, non-local variables, mutable reference arguments or input/output streams).
+Wikipedia裡對於純函數的定義[^1]，其必須符合兩個條件：
 
-在前端的純函數：
-1. 「函數對於同樣的參數，永遠產生同樣的結果，也就是這個函數不能根據一些隱藏資訊（例如函數內使用全域變數，亂數...）或者目前的狀態在程式執行時（例如目前時間,目前頁面...），程式與程式之間 (在不同的函數呼叫此函數時），或者使用者輸出入介面(I/O)的值（例如 event listener對於 input, mouseMove, 跟後端伺服器做 request...)。」
-2. 「函數產生的結果，不能帶來副作用(side effect)或者輸出,也就是不能對可變動的物件(mutable object)做更動，或者使用者輸出介面做輸出。」
+>  1. The function return values are identical for identical arguments (no variation with local static variables, non-local variables, mutable reference arguments or input streams)
+>  2. The function has no side effects (no mutation of local static variables, non-local variables, mutable reference arguments or input/output streams).
 
+純函數在前端的定義[^2]：
+> 1. 「函數對於同樣的參數，永遠產生同樣的結果，也就是這個函數不能根據一些隱藏資訊（例如函數內使用全域變數，亂數...）或者目前的狀態在程式執行時（例如目前時間,目前頁面...），程式與程式之間 (在不同的函數呼叫此函數時），或者使用者輸出入介面(I/O)的值（例如 event listener對於 input, mouseMove, 跟後端伺服器做 request...)。」
+> 2. 「函數產生的結果，不能帶來副作用(side effect)或者輸出,也就是不能對可變動的物件(mutable object)做更動，或者使用者輸出介面做輸出。」
 
-> [^1 Pure function](https://en.wikipedia.org/wiki/Pure_function), [純函數 (Pure Function)](https://ithelp.ithome.com.tw/articles/10193249)
+<br>
+
+> [^1 Pure function](https://en.wikipedia.org/wiki/Pure_function), [^2 純函數 (Pure Function)](https://ithelp.ithome.com.tw/articles/10193249)
 
 ---
 transition: slide-left
@@ -290,7 +298,7 @@ transition: slide-left
 
 
 # 純函數與不純函數
-純函數與不純函數
+JavaScript純函數與不純函數的例子如下：
 ```js {0|1,2,3|4,5|all}
 function sum(a, b) {
   return a + b;
@@ -311,6 +319,9 @@ var discount = 0.9;
 console.log(calcPrice(100));
 // now will return 90
 ``` 
+
+<br>
+
 > [Pure function](https://en.wikipedia.org/wiki/Pure_function), [純函數 (Pure Function)](https://ithelp.ithome.com.tw/articles/10193249)
 
 
@@ -338,7 +349,6 @@ console.log(calcPrice(100));
 
 
 <br>
-<br>
 
 > 參考資料：[Redux Application Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 
@@ -361,7 +371,7 @@ img {
 transition: slide-left
 ---
 
-# 總結：Flux架構的狀態管理的優點
+# 小結：Flux架構的狀態管理的優點
 Flux架構在Redux, NgRx分別有些差異，但總結來說，它們有以下優點：
 - 單向資料流易於追縱狀態在「何時」被「何者」「如何」改變：
   - Flux架構會將「使用者的動作Action與當下的狀態State的組合」序列化，單向資料流讓錯誤易於重現
