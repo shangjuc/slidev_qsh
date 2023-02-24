@@ -27,7 +27,7 @@ css: unocss
 
 # 淺談前端狀態管理
 
-以Flux架構的狀態管理為主
+簡介Flux架構的概念與實作
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -46,7 +46,7 @@ css: unocss
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+
 -->
 
 ---
@@ -71,6 +71,7 @@ Trend常見的狀態(state)：
 
 > 參考資料： [有關前端的狀態管理](https://ithelp.ithome.com.tw/articles/10191884)
 
+<!-- 在前端，狀態就是介面上的變數，可以隨著使用者操作而變化。 -->
 
 ---
 transition: slide-left
@@ -183,6 +184,7 @@ A good guideline that might help answer the question, "Do I need NgRx Store?" is
   狀態會受其他來源的動作所影響。
 ```
 
+<br>
 
 > 參考資料：[Ngrx Store - An Architecture Guide](https://blog.angular-university.io/angular-ngrx-store-and-effects-crash-course/)
 
